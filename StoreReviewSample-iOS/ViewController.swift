@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //MARK: Action
 
+    @IBAction func showStoreReviewAction(_ sender: Any) {
+
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        } else {
+            print("TODO: create AlertController#")
+        }
+    }
 }
 
